@@ -1,0 +1,39 @@
+---
+#- hosts: basicSetUp
+#
+#  vars_prompt:
+#    - name: "sudo_password"
+#      prompt: "Enter sudo password"
+#      private: yes
+#
+#  become: yes
+#
+#  vars:
+#    ansible_sudo_pass: '{{ sudo_password }}'
+#
+#  roles:
+#    - jdk
+#    - maven
+
+- hosts: basicSetUp
+
+#  vars_prompt:
+#    - name: "gituser"
+#      prompt: "Enter git username"
+#      private: no
+#    - name: "gitpassword"
+#      prompt: "Enter git password"
+#      private: yes
+
+  vars:
+    dest_dir: '/home/{{ ansible_user }}/Desktop'
+
+  roles:
+    - role: intellij
+      dest_folder: '{{ dest_dir }}'
+
+#    - role: wildfly
+#      dest_folder: '{{ dest_dir }}'
+
+#    - role: svv_checkout
+#      dest_folder: '{{ dest_dir }}'

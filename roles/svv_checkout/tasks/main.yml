@@ -1,0 +1,5 @@
+---
+- name: SVV checkout
+  git:
+    repo: 'https://{{ gituser | urlencode }}:{{ gitpassword }}@scm.adesso.de/scm/git/svv/esp'
+    dest: "{{ dest_folder }}/projects/svvesp"

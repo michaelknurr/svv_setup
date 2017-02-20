@@ -1,0 +1,4 @@
+---
+- src: https://github.com/robertBrem/ansible_intellij
+  scm: git
+  name: intellij
